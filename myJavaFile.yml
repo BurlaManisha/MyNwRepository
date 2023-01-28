@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: I want to install java8 on Debian Server
+      apt:
+        name: openjdk-8-jdk
+        status: present
+      when: ansible_os_family=="Debian"
+    
+    - name: I want to install java8 on RedHat Server
+      apt:
+        name: java-1.8.0-openjdk
+        status: present
+      when: ansible_os_family=="RedHat"
+    
