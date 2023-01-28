@@ -9,7 +9,7 @@
       when: ansible_os_family=="Debian"
     
     - name: I want to install java8 on RedHat Server
-      apt:
+      yum:
         name: java-1.8.0-openjdk
         status: present
       when: ansible_os_family=="RedHat"
